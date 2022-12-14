@@ -20,8 +20,21 @@ const agregarNote = (note, archivo) => {
     });
 };
 
+/*const borrarNote = (id, archivo) => {
+    fs.readFile(archivo, 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+        } else {
+            const parsedData = JSON.parse(data);
+            const newArray = parsedData.filter((nota) => nota.id !== id);
+            writeToFile(archivo, newArray);
+        }
+    });
+};  */
+
 module.exports = {
     readFromFile,
     writeToFile,
-    agregarNote
+    agregarNote,
+   // borrarNote
 };

@@ -1,6 +1,6 @@
 const notas = require('express').Router();
 const { v4: uuidv4 } = require('uuid');
-const { readFromFile, agregarNote } = require('../helpers/fsUtils');
+const { readFromFile, agregarNote, borrarNote } = require('../helpers/fsUtils');
 
 notas.get('/notes', (req, res) =>
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
@@ -20,5 +20,14 @@ notas.post('/notes', (req, res) => {
         res.json(`Error en agregar nota`);
     }
 });
+
+/* notas.delete('/notes/:id', (req, res) => {
+    if (id) {
+        borrarNote(id, './db/db.json');
+        res.json(`Nota eliminada exitosamente`);
+    } else {
+        res.json(`Error en agregar nota`);
+    }
+}); */
 
 module.exports = notas;
