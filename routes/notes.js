@@ -21,7 +21,6 @@ notas.post('/notes', (req, res) => {
     }
 });
 
-
 /* notas.delete('/notes/:id', (req, res) => {
     if (id) {
         borrarNote(id, './db/db.json');
